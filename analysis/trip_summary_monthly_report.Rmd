@@ -1,0 +1,104 @@
+---
+title: "Monthly Trip Summary Report"
+subtitle: "A document generated periodically"
+author: "Mike Gaunt"
+output: 
+  github_document:
+  toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  cache = FALSE, cache.lazy = FALSE, autodep = TRUE, warning = FALSE, 
+  message = FALSE, echo = TRUE, dpi = 180,
+  fig.width = 8, fig.height = 5, echo = FALSE
+  )
+```
+
+<!--#general comments===========================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# This markdown is an example of how to use a makrdown for periodic report generation
+#
+#
+# README: assumes data is in separate month queries
+#-------- makes same report but with different data
+#
+# *please use 80 character margins
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--#library set-up=============================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev -->
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(readxl)
+library(billboarder)
+library(lubridate)
+library(DT)
+```
+
+<!--#source helpers/utilities===================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev -->
+```{r}
+source(here::here("code/helpers_general.r"))
+source(here::here("code/helpers_DT.r"))
+```
+
+<!--#source data================================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev 
+#area to upload data with and to perform initial munging
+#please add test data here so that others may use/unit test these scripts -->
+```{r}
+trip_summary = read_xlsx(here::here("data/trip_summary/20210716_2021_trip_summary.xlsx")) %>%  
+    mutate(trip_date = ymd(trip_date), 
+           trip_month = month(trip_date, label = T)) %>%  
+  filter(trip_month == "Jun")
+```
+
+<!--#SECTION NAME===============================================================
+#use this header to make demarcations/section in code [delete this line]
+#short description -->
+
+## Executive Summary
+
+This report is generated using data from **`r min(trip_summary$trip_date)`**  to **`r max(trip_summary$trip_date)`**.
+
+```{r, cancelled_count}
+
+trip_summary %>%  
+  filter(cancelled_count > 0) %>%  
+  group_by(facility, trip_date,transaction_type) %>% 
+  summarise(total_cancelled = sum(cancelled_count)) %>% 
+  ggplot() + 
+  geom_col(aes(trip_date, total_cancelled, fill = facility)) + 
+  facet_grid(rows = vars(facility), scales = "free_y") + 
+  labs(x = "Trip Date", y = "Trip Count", title = "Total Number of Cancelled Trips by Facility")
+  
+
+```
+
+```{r}
+trip_summary %>%  
+  filter(cancelled_count > 0) %>%  
+  group_by(trip_date, transaction_type) %>% 
+  summarise(total_cancelled = sum(cancelled_count)) %>% 
+  ggplot() + 
+  geom_col(aes(trip_date, total_cancelled, fill = transaction_type)) + 
+  facet_grid(rows = vars(transaction_type), scales = "free_y") + 
+  # theme(legend.position = "bottom") +
+  labs(x = "Trip Date", y = "Trip Count", title = "Total Number of Cancelled Trips by Transaction Type")
+```
+
+<!--end-->
+
+
+
+
+
+
+

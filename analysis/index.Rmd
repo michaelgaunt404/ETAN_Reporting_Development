@@ -3,9 +3,39 @@ title: "Home"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
-    toc: false
+    toc: TRUE
 editor_options:
   chunk_output_type: console
 ---
 
 Welcome to my research website.
+
+Examples: 
+
+* **Periodic Reporting**    
+This is an example of a report published every month. Each month the same analysis template is used to generate the report using the data from the previous month.
+  
+  + Trip Summary Report (published monthly)
+    - [Trips Summary - March 2020](TSMR_April_2020-05-04.html)
+    - [Trips Summary - April 2020](TSMR_June_2020-07-06.html)
+    - [Trips Summary - May 2020](TSMR_March_2020-04-01.html)
+    - [Trips Summary - June 2020](TSMR_May_2020-06-02.html)
+
+* **Dashboard Mock-Ups**   
+The workflowr framework is capable of publishing dashboards created using flexdashboard. Shiny elements cannot be used via worfklowr, interactivity requires document to be hosted on ShinyIO. These dashboards are intended to very lightweight and used only for mock-ups for production dashboards or feature development.
+  + [Trip Summary Dashboard](dashboard_trip_summary.html) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

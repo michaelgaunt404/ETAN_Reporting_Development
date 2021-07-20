@@ -1,0 +1,183 @@
+---
+title: "Trip Summary"
+output:
+  flexdashboard::flex_dashboard:
+    theme: 
+      version: 4
+      bootswatch: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!--#general comments===========================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# This is [[insert description here - what it does/solve]]
+#
+# By: mike gaunt, michael.gaunt@wsp.com
+#
+# README: [[insert brief readme here]]
+#-------- [[insert brief readme here]]
+#
+# *please use 80 character margins
+# *please go to https://pkgs.rstudio.com/flexdashboard/articles/layouts.html
+# to explore the different layouts available for the flexdashboard framework
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--#library set-up=============================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, root.dir = here::here())
+```
+
+<!--#library set-up=============================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev -->
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(readxl)
+library(billboarder)
+library(lubridate)
+library(DT)
+```
+
+<!--#source helpers/utilities===================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev -->
+```{r}
+source(here::here("code/helpers_general.r"))
+source(here::here("code/helpers_DT.r"))
+```
+
+<!--#source data================================================================
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#content in this section should be removed if in production - ok for dev 
+#area to upload data with and to perform initial munging
+#please add test data here so that others may use/unit test these scripts -->
+```{r}
+trip_summary = read_xlsx(here::here("data/trip_summary/20210716_2021_trip_summary.xlsx")) %>%  
+    mutate(trip_date = ymd(trip_date))
+```
+
+<!--#SECTION NAME===============================================================
+#use this header to make demarcations/section in code [delete this line]
+#short description -->
+
+Trips Overview
+=====================================  
+    
+Column {data-width=600 .tabset .tabset-fade}
+-------------------------------------
+    
+### Daily Total Trip Counts  
+    
+```{r}
+trip_summary %>%  
+    filter(roadside_toll_type == "TRANSPONDER", 
+           transaction_type == "TOLL", 
+           enforcement_type == "BYTAG", 
+           is.na(entry_reason)) %>% 
+    mutate(wday = wday(trip_date, label = T, abbr = T)) %>% 
+    ggplot() + 
+    geom_line(aes(trip_date, trip_count, color = wday)) + 
+    facet_grid(rows = vars(facility), scales = "free") +
+    coord_cartesian(ylim = c(0, NA))
+```
+
+### Differenced Plot  
+```{r}
+trip_summary %>%  
+    filter(roadside_toll_type == "TRANSPONDER", 
+           transaction_type == "TOLL", 
+           enforcement_type == "BYTAG", 
+           is.na(entry_reason)) %>% 
+    mutate(wday = wday(trip_date, label = T, abbr = T)) %>% 
+    ggplot() + 
+    geom_line(aes(trip_date, trip_count - lag(trip_count), color = wday)) + 
+    facet_grid(rows = vars(facility), scales = "free")
+```
+
+### Total Trips by Combined trip Status
+```{r}
+trip_summary %>%  
+    mutate(combined_status = str_glue("{transaction_type}_{transaction_category}_{enforcement_type}")) %>% 
+    group_by(facility, combined_status, trip_date) %>%  
+    summarise(total_trips = sum(trip_count), row_count = n()) %>% 
+    ggplot() + 
+    geom_tile(aes(trip_date, combined_status, fill = log10(total_trips))) + 
+    facet_grid(rows = vars(facility), scales = "free", shrink = T, space = "free_y") +
+    theme(legend.position = "right") + 
+    labs(y = "")
+
+```
+
+   
+Column {data-width=400}
+-------------------------------------
+   
+### Raw Aggreagates for Combined Trip Type
+
+```{r}
+trip_summary %>%  
+    mutate(combined_status = str_glue("{transaction_type}_{transaction_category}_{enforcement_type}")) %>% 
+    group_by(facility, combined_status) %>%  
+    summarise(total_trips = sum(trip_count), row_count = n()) %>%  
+    dt_common()
+```   
+ 
+
+Detailed Analysis Page {data-orientation=rows}
+=====================================     
+   
+Row {data-height=600}
+-------------------------------------
+
+### Chart 1
+
+```{r}
+```
+
+Row {data-height=400}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+```   
+    
+### Chart 3
+
+```{r}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--end-->
