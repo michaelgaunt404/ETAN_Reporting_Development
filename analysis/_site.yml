@@ -3,12 +3,15 @@ output_dir: ../docs
 navbar:
   title: "ETAN_reporting_development"
   left:
-  - text: Home
+  - text: Overview
     href: index.html
   - text: About
     href: about.html
   - text: License
     href: license.html
+  right:
+    - text: source
+      href: https://github.com/michaelgaunt404/ETAN_Reporting_Development
 output:
   workflowr::wflow_html:
     toc: yes

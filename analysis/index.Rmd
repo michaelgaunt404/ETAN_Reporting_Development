@@ -1,19 +1,48 @@
 ---
-title: "Home"
+title: "ETAN Reporting Dev Portal"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
-    toc: TRUE
+    toc: FALSE
 editor_options:
   chunk_output_type: console
 ---
+  
+## Overview  
+  
+---
 
-Welcome to my research website.
+The purpose of this website is to provide a singular location to publish and share data products related the ETAN database. 
 
-Examples: 
+This website was built using [workflowr framework](https://jdblischak.github.io/workflowr/index.html), it provides the following features:   
+
+Organized
+
+* Provides a project template with organized subdirectories
+* Mixes code and results with R Markdown
+* Uses Git to version both source code and results
+
+Reproducible
+ 
+* Displays the code version used to create each result
+* Runs each analysis in an isolated R session
+* Records the session information of each analysis
+* Sets the same seed for random number generation for each analysis
+
+Shareable
+  
+* Creates a website to present your research results
+* Documents how to host your website for free via GitHub Pages or GitLab Pages
+* Creates links to past versions of results
+\*Copied from the workflowr [website](https://jdblischak.github.io/workflowr/index.html)
+
+
+## Data Products 
+
+---
 
 * **Periodic Reporting**    
-This is an example of a report published every month. Each month the same analysis template is used to generate the report using the data from the previous month.
+This is an example of a report which is published every month. Each month the same analysis template is used to generate the report using the data from the previous month.
   
   + Trip Summary Report (published monthly)
     - [Trips Summary - March 2020](TSMR_April_2020-05-04.html)
@@ -22,7 +51,7 @@ This is an example of a report published every month. Each month the same analys
     - [Trips Summary - June 2020](TSMR_May_2020-06-02.html)
 
 * **Dashboard Mock-Ups**   
-The workflowr framework is capable of publishing dashboards created using flexdashboard. Shiny elements cannot be used via worfklowr, interactivity requires document to be hosted on ShinyIO. These dashboards are intended to very lightweight and used only for mock-ups for production dashboards or feature development.
+The workflowr framework is capable of publishing dashboards created using flexdashboard. Shiny elements cannot be used with this framework, interactivity requires document to be hosted on ShinyIO. These dashboards are intended to very lightweight and used only for mock-ups for production dashboards and/or feature development.
   + [Trip Summary Dashboard](dashboard_trip_summary.html) 
 
 

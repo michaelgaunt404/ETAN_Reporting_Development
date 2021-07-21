@@ -11,12 +11,12 @@
 
 
 
-<title>Home</title>
+<title>ETAN Reporting Dev Portal</title>
 
 <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -231,69 +228,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -301,16 +235,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -348,7 +272,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">ETAN Reporting Dev Portal</h1>
 
 </div>
 
@@ -373,7 +297,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-07-20
+<strong>Last updated:</strong> 2021-07-21
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
@@ -404,16 +328,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong47a26f3"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 47a26f3 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree252864971b201814b63f0ebdbdd99e7c046abc45targetblank2528649a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/252864971b201814b63f0ebdbdd99e7c046abc45" target="_blank">2528649</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong47a26f3" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree252864971b201814b63f0ebdbdd99e7c046abc45targetblank2528649a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 47a26f3. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/252864971b201814b63f0ebdbdd99e7c046abc45" target="_blank">2528649</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -422,30 +346,10 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Untracked files:
-    Untracked:  README.html
-    Untracked:  analysis/trip_summary_monthly_report.Rmd
-    Untracked:  code/build_dashboard.R
-    Untracked:  code/helpers_DT.R
-    Untracked:  code/helpers_general.R
-    Untracked:  code/helpers_markdown.R
-    Untracked:  code/helpers_networkPlots.R
-    Untracked:  code/modules/
-    Untracked:  code/template_flexdashboard.Rmd
-    Untracked:  code/template_markdown_analysis.Rmd
-    Untracked:  code/utils_helpers_general.R
-    Untracked:  code/utils_script_specific.R
-    Untracked:  code/zz_emptyScriptTemplate_CODE.R
-    Untracked:  code/zz_emptyScriptTemplate_UTILS.R
-    Untracked:  code/zz_localG.R
-    Untracked:  dashboard/
-    Untracked:  data/trip_summary/
+    Ignored:    data/
+    Ignored:    output/
 
 Unstaged changes:
-    Modified:   README.md
-    Modified:   analysis/_site.yml
-    Modified:   analysis/about.Rmd
     Modified:   analysis/index.Rmd
 
 </code></pre>
@@ -490,7 +394,41 @@ Message
 Rmd
 </td>
 <td>
-47a26f3
+<a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/blob/252864971b201814b63f0ebdbdd99e7c046abc45/analysis/index.Rmd" target="_blank">2528649</a>
+</td>
+<td>
+michaelgaunt404
+</td>
+<td>
+2021-07-20
+</td>
+<td>
+first commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/michaelgaunt404/ETAN_Reporting_Development/252864971b201814b63f0ebdbdd99e7c046abc45/docs/index.html" target="_blank">2528649</a>
+</td>
+<td>
+michaelgaunt404
+</td>
+<td>
+2021-07-20
+</td>
+<td>
+first commit
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/blob/47a26f35220f92c264add0bc331e5cd4f45d4e8c/analysis/index.Rmd" target="_blank">47a26f3</a>
 </td>
 <td>
 michaelgaunt404
@@ -509,11 +447,37 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>Welcome to my research website.</p>
-<p>Examples:</p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<hr />
+<p>The purpose of this website is to provide a singular location to publish and share data products related the ETAN database.</p>
+<p>This website was built using <a href="https://jdblischak.github.io/workflowr/index.html">workflowr framework</a>, it provides the following features:</p>
+<p>Organized</p>
+<ul>
+<li>Provides a project template with organized subdirectories</li>
+<li>Mixes code and results with R Markdown</li>
+<li>Uses Git to version both source code and results</li>
+</ul>
+<p>Reproducible</p>
+<ul>
+<li>Displays the code version used to create each result</li>
+<li>Runs each analysis in an isolated R session</li>
+<li>Records the session information of each analysis</li>
+<li>Sets the same seed for random number generation for each analysis</li>
+</ul>
+<p>Shareable</p>
+<ul>
+<li>Creates a website to present your research results</li>
+<li>Documents how to host your website for free via GitHub Pages or GitLab Pages</li>
+<li>Creates links to past versions of results *Copied from the workflowr <a href="https://jdblischak.github.io/workflowr/index.html">website</a></li>
+</ul>
+</div>
+<div id="data-products" class="section level2">
+<h2>Data Products</h2>
+<hr />
 <ul>
 <li><p><strong>Periodic Reporting</strong><br />
-This is an example of a report published every month. Each month the same analysis template is used to generate the report using the data from the previous month.</p>
+This is an example of a report which is published every month. Each month the same analysis template is used to generate the report using the data from the previous month.</p>
 <ul>
 <li>Trip Summary Report (published monthly)
 <ul>
@@ -524,11 +488,12 @@ This is an example of a report published every month. Each month the same analys
 </ul></li>
 </ul></li>
 <li><p><strong>Dashboard Mock-Ups</strong><br />
-The workflowr framework is capable of publishing dashboards created using flexdashboard. Shiny elements cannot be used via worfklowr, interactivity requires document to be hosted on ShinyIO. These dashboards are intended to very lightweight and used only for mock-ups for production dashboards or feature development.</p>
+The workflowr framework is capable of publishing dashboards created using flexdashboard. Shiny elements cannot be used with this framework, interactivity requires document to be hosted on ShinyIO. These dashboards are intended to very lightweight and used only for mock-ups for production dashboards and/or feature development.</p>
 <ul>
 <li><a href="dashboard_trip_summary.html">Trip Summary Dashboard</a></li>
 </ul></li>
 </ul>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -546,8 +511,6 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -580,35 +543,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
