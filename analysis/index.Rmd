@@ -41,6 +41,10 @@ Shareable
 
 ---
 
+* **ETAN Database Exploration Tool**          
+This application is an interactive markdown which allows for high level exploration of the ETAN database.    
+  - Link to the [tool (last updated 2021-07-06)](https://thxmo87.shinyapps.io/ETAN_database_guide/?_ga=2.161016189.1747854243.1626974155-202500809.1626974155) 
+
 * **Periodic Reporting**    
 This is an example of a report which is published every month. Each month the same analysis template is used to generate the report using the data from the previous month.
   

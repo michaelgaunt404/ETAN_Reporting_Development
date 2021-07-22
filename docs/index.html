@@ -252,7 +252,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">Overview</a>
 </li>
 <li>
   <a href="about.html">About</a>
@@ -262,7 +262,9 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development">source</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -297,7 +299,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-07-21
+<strong>Last updated:</strong> 2021-07-22
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
@@ -328,16 +330,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree252864971b201814b63f0ebdbdd99e7c046abc45targetblank2528649a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/252864971b201814b63f0ebdbdd99e7c046abc45" target="_blank">2528649</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree237de0a7ce7597748e99234be3bca87899e6d85atargetblank237de0aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/237de0a7ce7597748e99234be3bca87899e6d85a" target="_blank">237de0a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree252864971b201814b63f0ebdbdd99e7c046abc45targetblank2528649a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcommichaelgaunt404ETANReportingDevelopmenttree237de0a7ce7597748e99234be3bca87899e6d85atargetblank237de0aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/252864971b201814b63f0ebdbdd99e7c046abc45" target="_blank">2528649</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/tree/237de0a7ce7597748e99234be3bca87899e6d85a" target="_blank">237de0a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -346,6 +348,7 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/.Rhistory
     Ignored:    data/
     Ignored:    output/
 
@@ -389,6 +392,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/michaelgaunt404/ETAN_Reporting_Development/blob/237de0a7ce7597748e99234be3bca87899e6d85a/analysis/index.Rmd" target="_blank">237de0a</a>
+</td>
+<td>
+michaelgaunt404
+</td>
+<td>
+2021-07-21
+</td>
+<td>
+change index and _site
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/michaelgaunt404/ETAN_Reporting_Development/237de0a7ce7597748e99234be3bca87899e6d85a/docs/index.html" target="_blank">237de0a</a>
+</td>
+<td>
+michaelgaunt404
+</td>
+<td>
+2021-07-21
+</td>
+<td>
+change index and _site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -476,6 +513,11 @@ Start workflowr project.
 <h2>Data Products</h2>
 <hr />
 <ul>
+<li><p><strong>ETAN Database Exploration Tool</strong><br />
+This application is an interactive markdown which allows for high level exploration of the ETAN database.</p>
+<ul>
+<li>Link to the <a href="https://thxmo87.shinyapps.io/ETAN_database_guide/?_ga=2.161016189.1747854243.1626974155-202500809.1626974155">tool (last updated 2021-07-06)</a></li>
+</ul></li>
 <li><p><strong>Periodic Reporting</strong><br />
 This is an example of a report which is published every month. Each month the same analysis template is used to generate the report using the data from the previous month.</p>
 <ul>
