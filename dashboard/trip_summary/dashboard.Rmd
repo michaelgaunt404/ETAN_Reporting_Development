@@ -43,6 +43,8 @@ library(readxl)
 library(billboarder)
 library(lubridate)
 library(DT)
+library(crosstalk)
+library(plotly)
 ```
 
 <!--#source helpers/utilities===================================================
@@ -130,8 +132,23 @@ trip_summary %>%
 ```   
  
 
-Detailed Analysis Page {data-orientation=rows}
-=====================================     
+Reactivity Test with Crosstalk {data-orientation=rows}
+=====================================    
+
+```{r}
+shared_trip_summary = trip_summary %>%  
+  SharedData$new()
+```
+
+
+Inputs {.sidebar}
+-------------------------------------
+
+```{r}
+filter_select("test", "Test Filter", shared_trip_summary, ~roadside_toll_type, 
+              multiple = F)
+```
+
    
 Row {data-height=600}
 -------------------------------------
@@ -139,6 +156,11 @@ Row {data-height=600}
 ### Chart 1
 
 ```{r}
+summary_trip_summary %>%  
+  plot_ly(x = ~trip_date, y = ~record_count) %>%  
+  layout(xaxis = list(title = "Tip Date"), 
+         yaxis = list(title = "Record Count"))
+
 ```
 
 Row {data-height=400}
@@ -147,6 +169,17 @@ Row {data-height=400}
 ### Chart 2
 
 ```{r}
+shared_trip_summary %>%  
+  datatable()
+# 
+# x <- c(1:100)
+# random_y <- rnorm(100, mean = 0)
+# data <- data.frame(x, random_y)
+# 
+# fig <- plot_ly(data, x = ~x, y = ~random_y, type = 'scatter', mode = 'lines')
+# 
+# fig
+
 ```   
     
 ### Chart 3

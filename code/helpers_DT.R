@@ -29,7 +29,8 @@ dgt2 = function(x){
 
 #DT specific====================================================================
 #makes all NAs in datatable be visible
-options(htmlwidgets.TOJSON_ARGS = list(na = 'string'))
+# options(htmlwidgets.TOJSON_ARGS = list(na = 'string'))
+# options(DT.TOJSON_ARGS = list(na = 'string'))
 
 
 #creats DT readable icons
@@ -98,3 +99,20 @@ dt_common = function(df, y = NA, pl = 10, dom = "Blftipr", sel = "none", but = c
 
 
 #end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
